@@ -1,0 +1,59 @@
+<!-- 
+    Se ava mostrar los datos estaticos es decir directamente en html
+ -->
+
+<div>
+    <h3>
+        <strong>
+            Estos datos son estaticos
+        </strong>
+    </h3>
+    <!--     se creara una tabla parar mostrar los datos ordenados usando bootstrap -->
+    <br>
+    <table class="table my-3">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">repositorio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Yesid Rangel Orozco</th>
+                <td>Tunja-Boyaca</td>
+                <td>https://github.com/YETY93/yesid-semilleroHbt.git</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- 
+    Se ava mostrar los datos Dinamico es decir haciendo función de typeScrip
+ -->
+
+ <div>
+        <h3>
+            <strong>
+                Estos datos son estaticos
+            </strong>
+        </h3>
+        <!--     se creara una tabla parar mostrar los datos ordenados usando bootstrap -->
+        <br>
+        <table class="table my-3">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">repositorio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{datosEstudiante[0]}}</th>
+                    <td >{{datosEstudiante[1]}}</td>
+                    <td >{{datosEstudiante[2]}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>

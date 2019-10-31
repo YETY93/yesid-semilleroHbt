@@ -3,6 +3,7 @@ package com.hbt.semillero.servicios;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 /**
  * Test unitario del semillero HBT
  * 
@@ -56,4 +57,5 @@ public class AppTest {
 		String esperado = "Yo soy".toUpperCase().trim();
 		Assert.assertEquals(actual.replace(" ",""), esperado.replace(" ",""));
 	}
+	
 }

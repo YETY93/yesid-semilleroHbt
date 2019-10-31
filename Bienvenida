@@ -1,3 +1,11 @@
 Hola bienvenido a github :D
 
 He realizado una modificación -__-
+
+los comandos utilizados
+
+git init para inicializar el reposictorio
+git add para añadir al estado de cambio
+git commit para actulizar el cambio 
+git remote add origin y la dirrecion de directorio remoto
+git push para subir los cambios al repositorio
