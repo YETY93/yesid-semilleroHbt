@@ -2,36 +2,35 @@ package com.hbt.semillero.servicios;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-
 /**
- * Test unitario del semillero HBT
- * 
- * @author ccastano
- *
+ * Test unitario primiera clase
  */
-public class AppTest {
 
+public class AppTest{
+	public void  shoulAnswerWitcTrue() {
+		
+	}
+
+	
 	/**
-	 * Metodo que permite validar si dada la suma de dos numero el resultado es el
-	 * correcto
+	 * Metodo para validar la suma de dos numero 
+	 * 
 	 */
 	@Test
 	public void primeraPU() {
-		Long resultadoEsperado = 2159L;
-		Long sumando1 = 1500L;
-		Long sumando2 = 659L;
-		Long resultado = sumando1 + sumando2;
-		Assert.assertEquals(resultado, resultadoEsperado);
+		Long resultadoEsperado = 150L;
+		Long sumando1 = 100L;
+		Long sumando2 = 50L;
+		Long operacionResultado = sumando1 + sumando2;
+		Assert.assertEquals(operacionResultado, resultadoEsperado);	
+		
+		Assert.assertNotEquals(operacionResultado, resultadoEsperado);
 	}
-
+	
 	/**
 	 * 
-	 * Metodo encargado de dada una cadena invertir su posicion y retornarla al
-	 * revez
+	 * Metodo encargado  invertir una cadena 
 	 * 
-	 * @param cadena
-	 * @return
 	 */
 	private String invertirCadena(String cadena) {
 		String cadenaInvertida = "";
@@ -42,20 +41,27 @@ public class AppTest {
 	}
 	
 	/**
+	 * Pruebas  para validar cadenas (test)
 	 * 
-	 * Metodo encargado de validar que se invierte la cadena correctamente
-	 * Se pone en mayusculas las cadenas
-	 * Se quitan espacio al inicio y al fin de la cadena
-	 * Se reemplazan espacios para que la validacion se pueda comprobar 
-	 * <b>Caso de Uso</b>
-	 *
 	 */
 	@Test
-	public void invertirCadenaTest() {
-		String resultado = invertirCadena("Yo soy");
-		String actual =resultado.toUpperCase().trim();
-		String esperado = "Yo soy".toUpperCase().trim();
-		Assert.assertEquals(actual.replace(" ",""), esperado.replace(" ",""));
+	public void pruebaCadenas() {
+		
+		String resultado = invertirCadena("Esto es una cadena");
+		String cadenaInvertida = ("anedac anu se otsE");
+		
+		Assert.assertEquals(cadenaInvertida, resultado);
+		
+		String cadenaInvertidaDos = ("cadena anu se otsE");
+		Assert.assertNotEquals(cadenaInvertida, resultado);
 	}
 	
+	
+	public void pruebaCadenaVacia() {
+		String cadenaEsperada = "";
+		String resultadoReal = invertirCadena(" ");
+		Assert.assertNotEquals(resultadoReal, cadenaEsperada);
+	}
+	
+
 }
