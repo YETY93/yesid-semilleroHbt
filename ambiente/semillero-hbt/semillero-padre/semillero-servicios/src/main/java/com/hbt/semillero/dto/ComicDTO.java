@@ -87,14 +87,15 @@ public class ComicDTO implements Serializable {
 
 	/**
 	 * Constructor de la clase.
-	 * @param id del comic
+	 * @param l del comic
 	 * @param nombre
 	 */
-	public ComicDTO(String id, String nombre) {
+	public ComicDTO(String l, String nombre) {
 		super();
-		this.id = id;
+		this.id = l;
 		this.nombre = nombre;
 	}
+
 
 
 
@@ -105,13 +106,17 @@ public class ComicDTO implements Serializable {
 	public String getId() {
 		return id;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo id
 	 * @param id El nuevo id a modificar.
 	 */
 	public void setId(String id) {
 		this.id = id;
-	}	
+	}
+
+
 	/**
 	 * Metodo encargado de retornar el valor del atributo nombre
 	 * @return El nombre asociado a la clase
@@ -119,8 +124,6 @@ public class ComicDTO implements Serializable {
 	public String getNombre() {
 		return nombre;
 	}
-
-
 
 
 	/**
@@ -132,8 +135,6 @@ public class ComicDTO implements Serializable {
 	}
 
 
-
-
 	/**
 	 * Metodo encargado de retornar el valor del atributo editorial
 	 * @return El editorial asociado a la clase
@@ -141,6 +142,8 @@ public class ComicDTO implements Serializable {
 	public String getEditorial() {
 		return editorial;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo editorial
 	 * @param editorial El nuevo editorial a modificar.
@@ -175,6 +178,8 @@ public class ComicDTO implements Serializable {
 	public String getColeccion() {
 		return coleccion;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo coleccion
 	 * @param coleccion El nuevo coleccion a modificar.
@@ -182,6 +187,8 @@ public class ComicDTO implements Serializable {
 	public void setColeccion(String coleccion) {
 		this.coleccion = coleccion;
 	}
+
+
 	/**
 	 * Metodo encargado de retornar el valor del atributo numeroPaginas
 	 * @return El numeroPaginas asociado a la clase
@@ -189,6 +196,8 @@ public class ComicDTO implements Serializable {
 	public Integer getNumeroPaginas() {
 		return numeroPaginas;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo numeroPaginas
 	 * @param numeroPaginas El nuevo numeroPaginas a modificar.
@@ -196,6 +205,8 @@ public class ComicDTO implements Serializable {
 	public void setNumeroPaginas(Integer numeroPaginas) {
 		this.numeroPaginas = numeroPaginas;
 	}
+
+
 	/**
 	 * Metodo encargado de retornar el valor del atributo precio
 	 * @return El precio asociado a la clase
@@ -203,6 +214,8 @@ public class ComicDTO implements Serializable {
 	public BigDecimal getPrecio() {
 		return precio;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo precio
 	 * @param precio El nuevo precio a modificar.
@@ -210,6 +223,8 @@ public class ComicDTO implements Serializable {
 	public void setPrecio(BigDecimal precio) {
 		this.precio = precio;
 	}
+
+
 	/**
 	 * Metodo encargado de retornar el valor del atributo autores
 	 * @return El autores asociado a la clase
@@ -217,6 +232,8 @@ public class ComicDTO implements Serializable {
 	public String getAutores() {
 		return autores;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo autores
 	 * @param autores El nuevo autores a modificar.
@@ -224,6 +241,8 @@ public class ComicDTO implements Serializable {
 	public void setAutores(String autores) {
 		this.autores = autores;
 	}
+
+
 	/**
 	 * Metodo encargado de retornar el valor del atributo color
 	 * @return El color asociado a la clase
@@ -231,6 +250,8 @@ public class ComicDTO implements Serializable {
 	public Boolean getColor() {
 		return color;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo color
 	 * @param color El nuevo color a modificar.
@@ -238,6 +259,8 @@ public class ComicDTO implements Serializable {
 	public void setColor(Boolean color) {
 		this.color = color;
 	}
+
+
 	/**
 	 * Metodo encargado de retornar el valor del atributo fechaVenta
 	 * @return El fechaVenta asociado a la clase
@@ -245,6 +268,8 @@ public class ComicDTO implements Serializable {
 	public LocalDate getFechaVenta() {
 		return fechaVenta;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo fechaVenta
 	 * @param fechaVenta El nuevo fechaVenta a modificar.
@@ -252,7 +277,8 @@ public class ComicDTO implements Serializable {
 	public void setFechaVenta(LocalDate fechaVenta) {
 		this.fechaVenta = fechaVenta;
 	}
-	
+
+
 	/**
 	 * Metodo encargado de retornar el valor del atributo estadoEnun
 	 * @return El estadoEnun asociado a la clase
@@ -278,6 +304,8 @@ public class ComicDTO implements Serializable {
 	public Long getCantidad() {
 		return cantidad;
 	}
+
+
 	/**
 	 * Metodo encargado de modificar el valor del atributo cantidad
 	 * @param cantidad El nuevo cantidad a modificar.
@@ -285,6 +313,8 @@ public class ComicDTO implements Serializable {
 	public void setCantidad(Long cantidad) {
 		this.cantidad = cantidad;
 	}
+
+
 
 
 }

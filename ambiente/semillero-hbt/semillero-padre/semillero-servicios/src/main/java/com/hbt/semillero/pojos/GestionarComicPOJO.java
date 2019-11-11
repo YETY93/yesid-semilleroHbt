@@ -69,7 +69,7 @@ public class GestionarComicPOJO {
 		ComicDTO comicAModificar = null;
 		for (int i = 0; i < listaComics.size(); i++) {
 			comicAModificar = listaComics.get(i);
-			if (comicAModificar.getId().equals(id)) {
+			if (comicAModificar.getId() == (id)) {
 				comicAModificar.setNombre(nombre);
 				return;
 			}
