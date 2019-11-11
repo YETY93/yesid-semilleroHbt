@@ -10,14 +10,27 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './bienvenida-component.html',
 })
 export class BienvenidaComponent implements OnInit {
+  // variable que permitira ocultar la imagen de inicio
+  public mostrarImagen: boolean;
 
-
-constructor(){
-  console.log("Entro del Componente de Bienvenida");
-}
+  constructor() {
+    console.log("Entro del Componente de Bienvenida");
+  }
 
   ngOnInit(): void {
     console.log("Entro del Componente de Bienvenida con Onint");
-  }
 
+    //la imagen se mostrara por defecto
+    this.mostrarImagen = true;
+
+  }
+  //Metodo que permitira mostrar la imagen 
+  public verImagen(): void {
+    this.mostrarImagen = false;
+
+  }
+  //Metodo que permitira mostrar la imagen 
+  public ocultarImagen(): void {
+    this.mostrarImagen = true;
+  }
 }

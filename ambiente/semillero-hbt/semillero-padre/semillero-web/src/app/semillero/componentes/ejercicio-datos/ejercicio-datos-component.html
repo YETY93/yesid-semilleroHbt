@@ -1,0 +1,164 @@
+<!-- 
+    Se ava mostrar los datos estaticos es decir directamente en html
+ -->
+
+<div>
+    <h3>
+        <strong>
+            Estos datos son estaticos
+        </strong>
+    </h3>
+    <!--     se creara una tabla parar mostrar los datos ordenados usando bootstrap -->
+    <br>
+    <table class="table my-3">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">repositorio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Yesid Rangel Orozco</th>
+                <td>Tunja-Boyaca</td>
+                <td>https://github.com/YETY93/yesid-semilleroHbt.git</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- 
+    Se ava mostrar los datos Dinamico es decir haciendo función de typeScrip
+ -->
+
+<div>
+    <h3>
+        <strong>
+            Estos datos son dinámico
+        </strong>
+    </h3>
+    <!--     se creara una tabla parar mostrar los datos ordenados usando bootstrap -->
+    <br>
+    <table class="table my-3">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">repositorio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{datosEstudiante[0]}}</th>
+                <td>{{datosEstudiante[1]}}</td>
+                <td>{{datosEstudiante[2]}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- mostrar la lista de Revistas
+ -->
+<div>
+    <h2> Lista de Revista </h2>
+    <!-- se utiliza un una targeta de clase card de bootstrap 
+        para alojar el contenido -->
+    <div class="card my-4">
+        <div class="card-body">
+
+            <!-- se utiliza la directiva para mostrar una una 
+                lista ya que se puede iterar -->
+            <ul *ngFor="let revista of listaResvistas">
+
+                <h5 class="card-title"> Revista #: {{revista.id}} </h5>
+
+                <li>
+                    <p class="card-text"> Id revista: {{revista.id}}</p>
+                </li>
+                <li>
+                    <p class="card-text"> Nombre: {{revista.nombre}}</p>
+                </li>
+                <li>
+                    <p class="card-text"> Editorial: {{revista.editorial}} </p>
+                </li>
+                <li>
+                    <p class="card-text"> Tematica: {{revista.tematica}}</p>
+                </li>
+                <li>
+                    <p class="card-text"> Numero Paginas:{{revista.numeroPaginas}} </p>
+                </li>
+                <li>
+                    <p class="card-text"> Precio: {{revista.precio}} </p>
+                </li>
+                <li>
+                    <p class="card-text"> Autores: {{revista.autores}}</p>
+                </li>
+                <li>
+                    <p class="card-text"> Color: {{revista.aColor}} </p>
+                </li>
+                <li>
+                    <p class="card-text"> Fecha de venta: {{revista.fechaVenta}} </p>
+                </li>
+                <li>
+                    <p class="card-text"> Estado: {{revista.estado}}</p>
+                </li>
+            </ul>
+
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-secondary" (click)="publicActivarEliminar()">Eliminar elemento</button>
+            <div *ngIf="mostrarSeccionEliminar">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">ID de la lista para eliminar</label>
+                        <input type="text" name="modelID" class="form-control" id="exampleInputID"
+                            placeholder="Escriba el numero del Id " [(ngModel)]="modelID" [ngModelOptions]="{standalone: true}">
+                        <small id="inputID" class="form-text text-muted">
+                            Ingrese en el campo anteriror el numero ID de la lista que se va eliminar
+                        </small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="mostrarEliminacion(modelID)">Mostrar revista a eliminar</button>
+                    <div *ngIf="revistaPendiente" >
+                       <ul class="my-4" >
+
+                            <h5 class="card-title" style="color: red;"> Se eliminara la revista #: {{revistaEliminada.id}} </h5>
+            
+                            <li>
+                                <p class="card-text"> Id revista: {{revistaEliminada.id}}</p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Nombre: {{revistaEliminada.nombre}}</p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Editorial: {{revistaEliminada.editorial}} </p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Tematica: {{revistaEliminada.tematica}}</p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Numero Paginas:{{revistaEliminada.numeroPaginas}} </p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Precio: {{revistaEliminada.precio}} </p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Autores: {{revistaEliminada.autores}}</p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Color: {{revistaEliminada.aColor}} </p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Fecha de venta: {{revistaEliminada.fechaVenta}} </p>
+                            </li>
+                            <li>
+                                <p class="card-text"> Estado: {{revistaEliminada.estado}}</p>
+                            </li>
+                        </ul>
+                        <button  type="submit" class="btn btn-primary float-right" (click)="eliminarItem()">Eliminar revista</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

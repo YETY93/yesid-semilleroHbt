@@ -1,2 +1,16 @@
+<div>
+    <!--  Se ocultara la imagen para ver los ejercicios de clases
+-->
+    <button *ngIf="mostrarImagen" class="btn btn-primary" (click)="verImagen()"> Ocultar Imagen </button>
+    <button *ngIf="mostrarImagen == false" class="btn btn-danger" (click)="ocultarImagen()"> Mostrar Imagen </button>
 
-<img src="https://www.elempleo.com/sitios-empresariales/colombia/heinsohn-business-technology/img/elempleo-02.jpg" height="500" width="1000">
+
+</div>
+<img *ngIf="mostrarImagen"
+    src="https://www.elempleo.com/sitios-empresariales/colombia/heinsohn-business-technology/img/elempleo-02.jpg"
+    height="500" width="1000" class="my-2">
+
+<!--  este es el componente del ejercicio numero 1
+    aqui se cargaran los datos
+-->
+<ejercicio-datos></ejercicio-datos>
