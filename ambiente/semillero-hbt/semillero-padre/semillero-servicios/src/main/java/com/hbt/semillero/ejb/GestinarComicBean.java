@@ -53,7 +53,7 @@ public class GestinarComicBean implements IGestionarComicLocal {
 	
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public ComicDTO consultarComic(String id) {
-		Comic comic = em.find(Comic.class, id);
+		Comic comic = em.find(Comic.class, Long.parseLong(id) );
 		 ComicDTO comitDTO = convertirComicToComicDTO(comic);
 		 
 		return comitDTO;
