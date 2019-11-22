@@ -1,0 +1,77 @@
+<div class="container">
+  <!-- 
+    alert de bootstrap
+   -->
+
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Usted esta en modo visualisacion!</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <form [formGroup]="gestionarUsuariosForm">
+    <h1>Gestionar Usuarios</h1>
+    <hr />
+
+    <div class="row">
+      <div class="col-6">
+        <label for="nombreComic">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombreComic"
+          formControlName="nombre"
+        />
+      </div>
+
+      <div class="col-6">
+        <label for="fechaCreacion">fecha de Creacion:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fechaCreacion"
+          formControlName="fechaCreacion"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="estado">Estado:</label>
+          <select class="form-control" id="estado" formControlName="estado">
+            <option value="AVENTURAS">ACTIVO</option>
+            <option value="BELICO">INACTIVO</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <label for="IDpersona">Identificacion Usuarios:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="IDpersona"
+          formControlName="IDpersona"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-6">
+        <span></span>
+      </div>
+      <div class="col-6 text-right">
+        <p
+          class="btn btn-primary"
+          [routerLink]="['/gestionar-user']"
+          routerLinkActive="router-link-active"
+        >
+          Regresar
+        </p>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,130 @@
+<div class="container">
+    <form [formGroup]="gestionarUsuariosForm">
+      <h1>Gestionar Usuarios</h1>
+      <hr />
+  
+      <div class="row">
+        <div class="col-6">
+          <label for="nombreUsuario">Nombre:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombreUsuario"
+            formControlName="nombre"
+            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }"
+            maxlength="50"
+          />
+          <div *ngIf="submitted && f.nombre.errors">
+            <span class="text-danger" *ngIf="f.nombre.errors.required"
+              >Campo requerido.</span
+            >
+          </div>
+        </div>
+  
+        <div class="col-6">
+          <label for="fechaCreacion">Fecha creacion:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="fechaCreacion"
+            formControlName="fechaCreacion"
+          />
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <select class="form-control" id="estado" formControlName="estado">
+              <option value="AVENTURAS">ACTIVO</option>
+              <option value="BELICO">INACTIVO</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-6">
+          <label for="IDpersona">Identificacion Usuarios:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="IDpersona"
+            formControlName="IDpersona"
+          />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-6">
+          <span></span>
+        </div>
+        <div class="col-6 text-right">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="crearActualizarUsuario()"
+          >
+            Crear / Editar
+          </button>
+        </div>
+      </div>
+  
+      <br />
+  
+      <div
+        *ngIf="usuarioEliminado"
+        class="alert alert-warning alert-dismissible fade show"
+      >
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Eliminado</strong> Este comic, {{usuarioEliminado}} se ha eliminado
+        de forma permanente
+      </div>
+  
+      <div class="row" [hidden]="listaUsuarios.length === 0">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha de Creacion</th>
+                <th scope="col">Estado</th>
+                <th scope="col"># id Persona</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let usuario of listaUsuarios;let i=index;">
+                <th scope="row">{{usuario.id}}</th>
+                <td>{{usuario.nombre | uppercase }}</td>
+                <td>{{usuario.fechaCreacion | date: 'shortDate' }}</td>
+                <td>{{usuario.IDpersona }}</td>
+                <td>
+                  <!-- (click)="consultarComic(i)"  -->
+                  <i
+                    class="fas fa-search 3x ml-1"
+                    [routerLink]="['/visualizar-usuario',usuario]"
+                    routerLinkActive="router-link-active"
+                    title="Consultar"
+                  ></i>
+                  <i
+                    class="fas fa-pencil-alt 3x ml-1"
+                    (click)="editarUsuario(i)"
+                    title="Editar"
+                  ></i>
+                  <i
+                    class="far fa-times-circle 3x ml-1"
+                    (click)="eliminarUsuario(i)"
+                    title="Eliminar"
+                  ></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+  
